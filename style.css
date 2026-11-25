@@ -1,0 +1,161 @@
+:root {
+  --background: #f6f7f9;
+  --surface: #ffffff;
+  --text: #172033;
+  --muted: #526075;
+  --accent: #1d4ed8;
+  --border: #dce2ea;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--background);
+  color: var(--text);
+  font-family: system-ui, sans-serif;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+header {
+  background-color: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+nav,
+main {
+  width: 100%;
+  max-width: 68rem;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  padding-block: 1rem;
+}
+
+nav a {
+  display: inline-block;
+  padding-block: 0.5rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 0.2rem;
+}
+
+main {
+  padding-top: 3.5rem;
+  padding-bottom: 4rem;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.25;
+}
+
+h1 {
+  margin: 0 0 1.25rem;
+  font-size: 2.5rem;
+  letter-spacing: -0.04em;
+}
+
+main > p {
+  max-width: 40rem;
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.125rem;
+}
+
+.bagian {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.bagian section {
+  min-width: 0;
+  padding: 1.5rem;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+}
+
+h2 {
+  margin: 0 0 1.5rem;
+  font-size: 1.4rem;
+  letter-spacing: -0.02em;
+}
+
+h3 {
+  margin: 1.5rem 0 0.75rem;
+  font-size: 1rem;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+section p,
+section li {
+  color: var(--muted);
+}
+
+ul {
+  margin: 0 0 1rem;
+  padding-left: 1.25rem;
+}
+
+li + li {
+  margin-top: 0.4rem;
+}
+
+article + article {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.bagian section > :last-child,
+article > :last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 48rem) {
+  main {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+
+  .bagian {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 4rem;
+  }
+
+  .bagian section {
+    padding: 2rem;
+  }
+}

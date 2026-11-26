@@ -1,1 +1,15 @@
 .DS_Store
+
+# Paket yang dipasang melalui npm
+node_modules/
+
+# Hasil build Next.js
+.next/
+out/
+
+# Konfigurasi lingkungan lokal
+.env*
+!.env.example
+
+# Konfigurasi lokal Vercel
+.vercel/

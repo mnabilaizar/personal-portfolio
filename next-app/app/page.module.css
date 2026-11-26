@@ -1,0 +1,70 @@
+.halaman {
+  min-height: 100vh;
+  padding: 4rem 1.5rem;
+  background-color: #f6f7f9;
+  color: #172033;
+  line-height: 1.7;
+}
+
+.konten {
+  max-width: 64rem;
+  margin-inline: auto;
+}
+
+.perkenalan {
+  max-width: 42rem;
+  margin-bottom: 4rem;
+}
+
+.perkenalan h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(2.5rem, 7vw, 4rem);
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+}
+
+.perkenalan p {
+  margin: 0;
+  color: #526075;
+  font-size: 1.125rem;
+}
+
+.judulBagian {
+  margin: 0 0 1.5rem;
+  font-size: 1.5rem;
+}
+
+.daftar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.25rem;
+}
+
+.kartu {
+  min-width: 0;
+  padding: 1.5rem;
+  border: 1px solid #dce2ea;
+  border-radius: 1rem;
+  background-color: #ffffff;
+  overflow-wrap: anywhere;
+}
+
+.kartu h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.125rem;
+}
+
+.kartu p {
+  margin: 0;
+  color: #526075;
+}
+
+@media (min-width: 48rem) {
+  .halaman {
+    padding-block: 6rem;
+  }
+
+  .daftar {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

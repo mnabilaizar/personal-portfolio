@@ -1,0 +1,43 @@
+.header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #dce2ea;
+  color: #172033;
+}
+
+.navigasi {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  max-width: 64rem;
+  margin-inline: auto;
+  padding: 1rem 1.5rem;
+}
+
+.nama {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.tautan {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.navigasi a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.navigasi a:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+}
+
+.navigasi a:focus-visible {
+  outline: 3px solid #1d4ed8;
+  outline-offset: 4px;
+}

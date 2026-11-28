@@ -1,5 +1,6 @@
 import localFont from "next/font/local";
 import { profile } from "./data/profile";
+import { siteUrl } from "./data/site";
 import "./globals.css";
 
 const plexSans = localFont({
@@ -12,25 +13,28 @@ const plexSans = localFont({
 const title = `${profile.name} | Portofolio`;
 const description =
   "Portofolio Izar, mahasiswa Sistem dan Teknologi Informasi ITB. Kenali profil, kemampuan, sertifikat, dan pengalaman organisasinya.";
-const productionDomain = process.env.VERCEL_PROJECT_PRODUCTION_URL;
-const metadataBase = productionDomain ? new URL(`https://${productionDomain}`) : undefined;
-
 export const metadata = {
   title,
   description,
-  metadataBase,
-  alternates: metadataBase ? { canonical: "/" } : undefined,
+  metadataBase: siteUrl ?? new URL("http://localhost:3000"),
+  alternates: siteUrl ? { canonical: "/" } : undefined,
   openGraph: {
     title,
     description,
     siteName: "Portofolio Izar",
     locale: "id_ID",
     type: "website",
-    url: metadataBase ? "/" : undefined,
+    url: siteUrl?.href,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: [{ url: "/opengraph-image.jpg", alt: `Potret dan nama ${profile.name}` }],
   },
 };
 
-export const viewport = { themeColor: "#111210" };
+export const viewport = { themeColor: "#141310" };
 
 export default function RootLayout({ children }) {
   return (

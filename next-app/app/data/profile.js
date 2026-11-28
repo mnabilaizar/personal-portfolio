@@ -1,17 +1,11 @@
 export const profile = {
   name: "Muhammad Nabil Aizar Ramadhan",
   nickname: "Izar",
-  introduction:
-    "Saya memiliki dasar pemrograman dan analisis data serta pengalaman dalam koordinasi organisasi dan komunikasi dengan mitra.",
+  portfolioYear: 2026,
+  introduction: "Dasar pemrograman dan analisis data, dengan pengalaman organisasi di bidang HR, sponsorship, dan penggalangan dana.",
   about: [
-    {
-      title: "Fokus belajar",
-      description: "Saya sedang belajar membangun antarmuka web dan memahami cara aplikasi bertukar data.",
-    },
-    {
-      title: "Cara bekerja",
-      description: "Saya bekerja dengan teliti dan terorganisasi. Saya mengasah kemampuan memecahkan masalah, bekerja dalam tim, dan memimpin melalui perkuliahan, kegiatan organisasi, dan kompetisi.",
-    },
+    "Dalam perkuliahan, saya menggunakan Python, SQL, C, dan Java untuk mempelajari pemrograman dan pengolahan data.",
+    "Di luar kelas, saya membantu koordinasi staf dan pengelolaan data internal. Saya juga terlibat dalam komunikasi dengan calon sponsor, mitra, dan panitia kegiatan.",
   ],
   education: [
     {
@@ -30,46 +24,35 @@ export const profile = {
   ],
   skills: [
     {
-      level: "Sudah dipelajari",
-      groups: [
-        {
-          label: "Bahasa pemrograman",
-          description: "Dasar pemrograman dan cara menyusun kueri basis data.",
-          tools: [
-            { name: "Python", icon: "python" },
-            { name: "SQL", icon: "sql" },
-            { name: "C", icon: "c" },
-            { name: "Java", icon: "java" },
-          ],
-        },
-        {
-          label: "Tools",
-          description: "Perangkat untuk analisis dan visualisasi data, kolaborasi kode, serta pengenalan ERP.",
-          tools: [
-            { name: "Microsoft Excel", icon: "excel" },
-            { name: "Jupyter Notebooks", icon: "jupyter" },
-            { name: "Tableau", icon: "tableau" },
-            { name: "GitHub", icon: "github" },
-            { name: "Odoo ERP", icon: "odoo", iconWidth: 54 },
-          ],
-        },
+      label: "Bahasa pemrograman",
+      description: "Dasar pemrograman dan kueri basis data dalam perkuliahan.",
+      tools: [
+        { name: "Python", icon: "python" },
+        { name: "SQL", icon: "sql" },
+        { name: "C", icon: "c" },
+        { name: "Java", icon: "java" },
       ],
     },
     {
-      level: "Sedang dipelajari",
-      groups: [
-        {
-          label: "Pengembangan web",
-          description: "Membangun antarmuka dan mempelajari dasar pemrosesan data di server.",
-          tools: [
-            { name: "HTML", icon: "html" },
-            { name: "CSS", icon: "css" },
-            { name: "JavaScript", icon: "javascript" },
-            { name: "React", icon: "react" },
-            { name: "Next.js", icon: "nextjs" },
-            { name: "Dasar Node.js", icon: "nodejs" },
-          ],
-        },
+      label: "Web",
+      description: "Teknologi yang saya gunakan untuk membangun antarmuka dan situs ini.",
+      tools: [
+        { name: "HTML", icon: "html" },
+        { name: "CSS", icon: "css" },
+        { name: "JavaScript", icon: "javascript" },
+        { name: "React", icon: "react" },
+        { name: "Next.js", icon: "nextjs" },
+      ],
+    },
+    {
+      label: "Data dan tools",
+      description: "Perangkat untuk mengolah dan memvisualisasikan data, mengelola kode, dan mengonfigurasi ERP dalam tugas kuliah.",
+      tools: [
+        { name: "Microsoft Excel", icon: "excel" },
+        { name: "Jupyter Notebooks", icon: "jupyter" },
+        { name: "Tableau", icon: "tableau" },
+        { name: "GitHub", icon: "github" },
+        { name: "Odoo ERP", icon: "odoo", iconWidth: 54 },
       ],
     },
   ],
@@ -79,11 +62,10 @@ export const profile = {
       division: "Human Resources & Development",
       roles: [
         {
-          title: "Officer",
+          title: "HR & Development Officer",
           start: "2026-11",
           highlights: [
-            "Mendukung operasional HR dan pengelolaan kebutuhan internal organisasi.",
-            "Membantu koordinasi staf.",
+            "Mendukung operasional HR dan koordinasi staf dalam kegiatan internal organisasi.",
           ],
         },
         {
@@ -91,8 +73,7 @@ export const profile = {
           start: "2026-09",
           end: "2026-10",
           highlights: [
-            "Melakukan penilaian associate.",
-            "Menghubungi staf untuk menghimpun dan memperbarui informasi di basis data internal.",
+            "Melakukan penilaian associate serta menghubungi staf untuk mengumpulkan dan memperbarui informasi di basis data internal.",
           ],
         },
       ],
@@ -111,27 +92,23 @@ export const profile = {
       ],
     },
     {
-      organization: "HMIF ITB — WISOKTO",
-      roles: [
-        {
-          title: "Liaison Officer",
-          start: "2026-10",
-          end: "2026-11",
-          highlights: [
-            "Mengoordinasikan komunikasi antara wisudawan dan panitia selama persiapan dan pelaksanaan kegiatan.",
-          ],
-        },
-      ],
-    },
-    {
       organization: "HMIF ITB",
+      division: "Himpunan Mahasiswa Informatika ITB",
+      description: "Mewadahi mahasiswa Teknik Informatika serta Sistem dan Teknologi Informasi ITB.",
       roles: [
         {
           title: "Capital Catalyst Intern",
           start: "2026-09",
           highlights: [
-            "Berkontribusi pada kegiatan penggalangan dana.",
-            "Mendukung inisiatif bisnis untuk keberlanjutan finansial organisasi.",
+            "Berkontribusi pada penggalangan dana dan inisiatif bisnis untuk mendukung keberlanjutan finansial organisasi.",
+          ],
+        },
+        {
+          title: "Liaison Officer WISOKTO",
+          start: "2026-10",
+          end: "2026-11",
+          highlights: [
+            "Mengoordinasikan komunikasi antara wisudawan dan panitia selama persiapan dan pelaksanaan kegiatan.",
           ],
         },
       ],

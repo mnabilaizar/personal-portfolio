@@ -54,7 +54,7 @@ export default function PersonalPage() {
         </div>
       </main>
       <footer className={`${styles.container} ${styles.footer}`}>
-        <p>{profile.name}</p>
+        <p>{profile.name} · {profile.portfolioYear}</p>
       </footer>
     </>
   );

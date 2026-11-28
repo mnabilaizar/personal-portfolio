@@ -38,7 +38,7 @@
   border-radius: 0.7rem;
   background: var(--paper);
   scroll-snap-align: start;
-  transition: border-color 160ms ease;
+  transition: border-color var(--feedback) var(--ease-out);
 }
 
 .record:has(.action:hover, .action:focus-visible) {
@@ -92,18 +92,22 @@
   font-size: clamp(1rem, 0.92rem + 0.36vw, 1.2rem);
   font-weight: 580;
   line-height: 1.36;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
   text-wrap: pretty;
 }
 
 .cardFooter {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.2rem 0.75rem;
-  min-height: 2.75rem;
+  display: grid;
+  gap: 0.25rem;
   margin-block-start: auto;
+}
+
+.cardFooter .details {
+  column-gap: 0.4rem;
+}
+
+.cardFooter .details span + time::before {
+  margin-inline-end: 0.4rem;
 }
 
 .details,
@@ -124,6 +128,7 @@
   background: transparent;
   font: inherit;
   cursor: pointer;
+  justify-self: start;
 }
 
 .action::after {
@@ -141,9 +146,11 @@
   text-decoration: underline;
   text-decoration-color: color-mix(in srgb, currentColor 60%, transparent);
   text-underline-offset: 0.22em;
+  transition: color var(--feedback) var(--ease-out);
 }
 
 .action:hover,
+.action:focus-visible,
 .viewerLinks a:hover {
   color: var(--ink);
 }
@@ -166,7 +173,7 @@
   background: var(--paper);
   color: var(--ink);
   cursor: pointer;
-  transition: border-color 160ms ease, color 160ms ease;
+  transition: border-color var(--feedback) var(--ease-out), color var(--feedback) var(--ease-out), transform var(--feedback) var(--ease-out);
 }
 
 .trackArrow::before {
@@ -204,7 +211,7 @@
   font-weight: 550;
   white-space: nowrap;
   cursor: pointer;
-  transition: border-color 160ms ease, color 160ms ease;
+  transition: border-color var(--feedback) var(--ease-out), color var(--feedback) var(--ease-out), transform var(--feedback) var(--ease-out);
 }
 
 .control:hover {
@@ -231,6 +238,29 @@
 
 .viewer::backdrop {
   background: rgb(5 7 9 / 76%);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .viewer[open] {
+    animation: viewer-enter 210ms var(--ease-out) both;
+  }
+
+  .trackArrow:not([aria-disabled="true"]):active,
+  .control:active {
+    transform: scale(0.98);
+  }
+}
+
+@keyframes viewer-enter {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 :global(body):has(.viewer[open]) {

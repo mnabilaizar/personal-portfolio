@@ -27,7 +27,7 @@
   letter-spacing: -0.015em;
   line-height: 1;
   text-decoration: none;
-  transition: color 160ms ease;
+  transition: color var(--feedback) var(--ease-out);
 }
 
 .titik {
@@ -59,7 +59,7 @@
   font-weight: 500;
   text-decoration: none;
   white-space: nowrap;
-  transition: color 160ms ease;
+  transition: color var(--feedback) var(--ease-out);
 }
 
 .tautan a:hover,
@@ -68,39 +68,21 @@
   color: var(--accent);
 }
 
-.tautan a[aria-current="location"]::after {
+.tautan a::after {
   position: absolute;
   inset-block-end: 1.08rem;
   inset-inline: 0;
   block-size: 2px;
   background: var(--accent);
   content: "";
+  pointer-events: none;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--feedback) var(--ease-out);
 }
 
-@supports (animation-timeline: scroll()) {
-  @media (prefers-reduced-motion: no-preference) {
-    .header::after {
-      position: absolute;
-      inset: auto 0 -1px;
-      height: 1px;
-      background: var(--accent);
-      content: "";
-      pointer-events: none;
-      transform-origin: left;
-      animation: reading-progress auto linear both;
-      animation-timeline: scroll(root block);
-    }
-  }
-}
-
-@keyframes reading-progress {
-  from {
-    transform: scaleX(0);
-  }
-
-  to {
-    transform: scaleX(1);
-  }
+.tautan a[aria-current="location"]::after {
+  transform: scaleX(1);
 }
 
 .toggle {
@@ -130,13 +112,17 @@
     font-size: 0.875rem;
     font-weight: 500;
     cursor: pointer;
-    transition: color 160ms ease, border-color 160ms ease;
+    transition: color var(--feedback) var(--ease-out), border-color var(--feedback) var(--ease-out), transform var(--feedback) var(--ease-out);
   }
 
   .toggle:hover,
   .toggle[aria-expanded="true"] {
     color: var(--accent);
     border-color: var(--accent);
+  }
+
+  .toggle:active {
+    transform: scale(0.98);
   }
 
   .toggleIcon {
@@ -205,11 +191,17 @@
     font-size: 1rem;
   }
 
-  .tautan a[aria-current="location"]::after {
+  .tautan a::after {
     inset-block: 0.7rem;
     inset-inline: 0 auto;
     inline-size: 2px;
     block-size: auto;
+    transform: scaleY(0);
+    transform-origin: center bottom;
+  }
+
+  .tautan a[aria-current="location"]::after {
+    transform: scaleY(1);
   }
 }
 

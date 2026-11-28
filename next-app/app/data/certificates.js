@@ -1,17 +1,5 @@
 export const certificates = [
   {
-    id: "ibm-data-analyst",
-    title: "IBM Data Analyst Professional Certificate",
-    issuer: "IBM",
-    date: "2026-06-26",
-    verificationUrl: "https://www.coursera.org/account/accomplishments/specialization/XOQR8QNK72BC",
-    thumbnail: {
-      src: "/credentials/ibm-data-analyst.webp",
-      width: 1500,
-      height: 786,
-    },
-  },
-  {
     id: "foundation-of-data-science",
     title: "Foundations of Data Science",
     issuer: "Google",
@@ -19,6 +7,18 @@ export const certificates = [
     verificationUrl: "https://www.coursera.org/account/accomplishments/verify/9EUVHWMMX38W",
     thumbnail: {
       src: "/credentials/foundations-of-data-science.webp",
+      width: 1500,
+      height: 786,
+    },
+  },
+  {
+    id: "ibm-data-analyst",
+    title: "IBM Data Analyst Professional Certificate",
+    issuer: "IBM",
+    date: "2026-06-26",
+    verificationUrl: "https://www.coursera.org/account/accomplishments/specialization/XOQR8QNK72BC",
+    thumbnail: {
+      src: "/credentials/ibm-data-analyst.webp",
       width: 1500,
       height: 786,
     },

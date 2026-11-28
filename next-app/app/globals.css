@@ -1,15 +1,22 @@
 :root {
   color-scheme: dark;
-  --canvas: #111210;
-  --paper: #181a17;
-  --ink: #f2f1eb;
-  --muted: #b1b6a8;
-  --accent: #d4dfc0;
-  --line: #32362e;
-  --link-rule: #79856a;
+  --canvas: #141310;
+  --paper: #1d1b17;
+  --ink: #f4f0e8;
+  --muted: #bab7ad;
+  --accent: #d5ddbb;
+  --line: #36332a;
+  --link-rule: #818670;
   --gutter: clamp(1.25rem, 5vw, 4.5rem);
   --page-width: 74rem;
   --header-height: 4.5rem;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --feedback: 160ms;
+  --body-size: 1rem;
+  --radius-sm: 0.28rem;
+  --radius-md: 0.55rem;
+  --space-section: clamp(3.15rem, 6.6vw, 6.25rem);
+  --space-heading: clamp(1.6rem, 3.9vw, 3.35rem);
 }
 
 *,
@@ -19,6 +26,7 @@
 }
 
 html {
+  scrollbar-gutter: stable;
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--header-height) + 1.25rem);
 }
@@ -27,7 +35,7 @@ body {
   margin: 0;
   background: var(--canvas);
   color: var(--ink);
-  font: 1rem/1.62 var(--font-plex-sans), "Helvetica Neue", Arial, sans-serif;
+  font: var(--body-size)/1.62 var(--font-plex-sans), "Helvetica Neue", Arial, sans-serif;
 }
 
 h1,
@@ -72,37 +80,6 @@ a {
   transform: translateY(0);
 }
 
-@supports ((animation-timeline: view()) and (animation-range: entry)) {
-  @media (prefers-reduced-motion: no-preference) {
-    [data-scroll-fade] {
-      animation: scroll-fade auto linear both;
-      animation-timeline: view();
-    }
-
-    [data-scroll-fade]:focus-within {
-      animation: none;
-    }
-  }
-}
-
-@keyframes scroll-fade {
-  0% {
-    opacity: 0.82;
-    transform: translateY(0.4rem);
-  }
-
-  20%,
-  80% {
-    opacity: 1;
-    transform: none;
-  }
-
-  100% {
-    opacity: 0.82;
-    transform: translateY(-0.3rem);
-  }
-}
-
 @media (max-width: 820px) {
   :root {
     --header-height: 4rem;
@@ -110,11 +87,16 @@ a {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  button:active,
+  a:active {
+    transform: none !important;
+  }
+
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
+    animation: none !important;
+    transition: none !important;
     scroll-behavior: auto !important;
   }
 }

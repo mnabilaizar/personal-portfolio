@@ -1,36 +1,22 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portofolio Izar
 
-## Getting Started
+Aplikasi Next.js berada di `next-app/`. Direktori ini juga menjadi Root Directory di Vercel.
 
-First, run the development server:
+## Pratinjau lokal
 
-```bash
+Jalankan perintah berikut dari root repositori.
+
+```sh
+cd next-app
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Buka `http://localhost:3000`. Dari direktori `next-app/`, jalankan `npm run lint` untuk memeriksa kode atau `npm run build` untuk membuat build produksi. `npm run start` menjalankan build tersebut.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Memperbarui konten
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `app/data/profile.js` memuat identitas, pendidikan, kemampuan, pengalaman, kontak, dan daftar musisi pada halaman `/tentang-saya`.
+- `app/data/certificates.js` memuat daftar kredensial. Setiap entri membutuhkan `id` unik dan `title`. Isi `issuer` dan `date` jika diketahui. Tanggal menerima format `YYYY`, `YYYY-MM`, atau `YYYY-MM-DD`.
+- Tambahkan `thumbnail` sebagai objek berisi `src`, `width`, `height`, dan `alt` opsional. `documentUrl` dan `verificationUrl` juga opsional. Viewer tersedia untuk entri yang memiliki thumbnail atau dokumen asli.
+- Simpan aset sertifikat yang disiapkan untuk publik di `public/credentials/`. Gunakan jalur seperti `/credentials/nama-file.webp` untuk thumbnail dan `/credentials/nama-file.pdf` untuk dokumen asli. Untuk pratinjau yang jelas, gunakan salinan gambar dengan proporsi dokumen aslinya.
